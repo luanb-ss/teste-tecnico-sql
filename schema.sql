@@ -63,12 +63,12 @@ INSERT INTO EMPRESA (razao_social, inativo) VALUES
 ('Empresa E', TRUE);
 
 -- Inserindo registros na tabela PRODUTOS
-INSERT INTO PRODUTOS (descricao, inativo) VALUES
-('Produto 1', FALSE),
-('Produto 2', FALSE),
-('Produto 3', TRUE),
-('Produto 4', FALSE),
-('Produto 5', TRUE);
+INSERT INTO PRODUTOS (id_produto, descricao, inativo) VALUES
+(1, 'Produto 1', FALSE),
+(2, 'Produto 2', FALSE),
+(3, 'Produto 3', TRUE),
+(4, 'Produto 4', FALSE),
+(5, 'Produto 5', TRUE);
 
 INSERT INTO VENDEDORES (id_vendedor, nome, cargo, salario, data_admissao, inativo) VALUES
 (1, 'Vendedor Z', 'Cargo A', 3000.00, '2023-01-10', FALSE),
@@ -84,22 +84,22 @@ INSERT INTO CONFIG_PRECO_PRODUTO (id_vendedor, id_empresa, id_produto, preco_min
 (4, 4, 4, 18.00, 28.00),
 (5, 5, 5, 20.00, 30.00);
 
-INSERT INTO CLIENTES (razao_social, data_cadastro, id_vendedor, id_empresa, inativo) VALUES
-('Cliente A', '2023-06-01', 1, 1, FALSE),
-('Cliente B', '2023-06-05', 2, 2, FALSE),
-('Cliente C', '2023-06-10', 3, 3, TRUE),
-('Cliente D', '2023-06-15', 4, 4, FALSE),
-('Cliente E', '2023-06-20', 5, 5, TRUE);
+INSERT INTO CLIENTES (id_cliente, razao_social, data_cadastro, id_vendedor, id_empresa, inativo) VALUES
+(1, 'Cliente A', '2023-06-01', 1, 1, FALSE),
+(2, 'Cliente B', '2023-06-05', 2, 2, FALSE),
+(3, 'Cliente C', '2023-06-10', 3, 3, TRUE),
+(4, 'Cliente D', '2023-06-15', 4, 4, FALSE),
+(5, 'Cliente E', '2023-06-20', 5, 5, TRUE);
 
-INSERT INTO PEDIDO (id_empresa, id_cliente, valor_total, data_emissao, data_faturamento, data_cancelamento) VALUES
-(1, 1, 120.00, '2023-07-06', null, null),
-(1, 1, 130.00, '2023-07-07', null, null),
-(2, 2, 170.00, '2023-07-08', '2023-07-09', null),
-(2, 2, 180.00, '2023-07-09', '2023-07-10', '2023-07-11'),
-(3, 3, 210.00, '2023-07-10', null, null),
-(3, 3, 220.00, '2023-07-11', '2023-07-11', null),
-(4, 4, 260.00, '2023-07-12', '2023-07-12', '2023-07-13'),
-(4, 4, 270.00, '2023-07-13', '2023-07-14', null);
+INSERT INTO PEDIDO (id_pedido, id_empresa, id_cliente, valor_total, data_emissao, data_faturamento, data_cancelamento) VALUES
+(1, 1, 1, 120.00, '2023-07-06', null, null),
+(2, 1, 1, 130.00, '2023-07-07', null, null),
+(3, 2, 2, 170.00, '2023-07-08', '2023-07-09', null),
+(4, 2, 2, 180.00, '2023-07-09', '2023-07-10', '2023-07-11'),
+(5, 3, 3, 210.00, '2023-07-10', null, null),
+(6, 3, 3, 220.00, '2023-07-11', '2023-07-11', null),
+(7, 4, 4, 260.00, '2023-07-12', '2023-07-12', '2023-07-13'),
+(8, 4, 4, 270.00, '2023-07-13', '2023-07-14', null);
 
 INSERT INTO ITENS_PEDIDO (id_pedido, id_produto, preco_praticado, quantidade) VALUES
 (1, 1, 10.00, 5),
